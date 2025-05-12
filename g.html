@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bijouterie - Site Vitrine</title>
+  <link rel="stylesheet" href="c.css">
+</head>
+<body class="theme-home">
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo de la bijouterie" />
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="#" data-section="home" class="active">Accueil</a></li>
+        <li><a href="#" data-section="femme">Bijoux Femme</a></li>
+        <li><a href="#" data-section="homme">Bijoux Homme</a></li>
+        <li><a href="#" data-section="atelier">Atelier Créatif</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="homeSection" class="section active">
+      <h1>Bienvenue dans notre bijouterie</h1>
+      <p class="intro">
+        Découvrez des bijoux d'exception pour femmes et hommes, des sacs élégants, des pierres naturelles sélectionnées,
+        des bijoux en acier inoxydable et en argent. Plongez dans notre univers luxueux et créatif.
+      </p>
+      <p class="intro">
+        Notre atelier créatif vous permet de concevoir le bijou de vos rêves. Laissez libre cours à votre imagination !
+      </p>
+    </section>
+
+    <section id="femmeSection" class="section">
+      <h2 class="section-title">Collection Femme</h2>
+      <p class="description">
+        Des bijoux <span id="womanPhrase">élégants</span> pour sublimer chaque femme.
+      </p>
+      <div class="gallery">
+        <img src="femme1.jpg" alt="Bijou femme 1" class="gallery-img">
+        <img src="femme2.jpg" alt="Bijou femme 2" class="gallery-img">
+        <img src="femme3.jpg" alt="Bijou femme 3" class="gallery-img">
+      </div>
+    </section>
+
+    <section id="hommeSection" class="section">
+      <h2 class="section-title">Collection Homme</h2>
+      <p class="description">
+        Des accessoires <span id="manPhrase">modernes</span> pour révéler la personnalité de chaque homme.
+      </p>
+      <div class="gallery">
+        <img src="homme1.jpg" alt="Bijou homme 1" class="gallery-img">
+        <img src="homme2.jpg" alt="Bijou homme 2" class="gallery-img">
+        <img src="homme3.jpg" alt="Bijou homme 3" class="gallery-img">
+      </div>
+    </section>
+
+    <section id="atelierSection" class="section">
+      <h2 class="section-title">Atelier Créatif</h2>
+      <p class="description">
+        Créez votre bijou unique grâce à notre atelier interactif. Sélectionnez un pendentif, une chaîne, une couleur, et visualisez votre création en temps réel.
+      </p>
+      <button id="openCreatorBtn" class="creative-btn">Créer mon bijou</button>
+
+      <div id="creativeModal" class="modal">
+        <div class="modal-content">
+          <span id="closeModal" class="close-btn">&times;</span>
+          <h3>Personnalisez votre bijou</h3>
+          <p>Glissez-déposez un pendentif dans la zone de prévisualisation :</p>
+          <div class="creator-tools">
+            <div class="pieces">
+              <div class="piece" draggable="true" data-piece="💎">💎</div>
+              <div class="piece" draggable="true" data-piece="❤️">❤️</div>
+              <div class="piece" draggable="true" data-piece="⭐">⭐</div>
+            </div>
+            <div id="dropZone" class="preview-area">
+              <p class="placeholder">Déposez le pendentif ici</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Bijouterie – Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
