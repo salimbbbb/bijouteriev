@@ -5,8 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bijouterie - Site Vitrine</title>
   <link rel="stylesheet" href="c.css">
+  <style>
+    /* Fix slider */
+    .background-slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .background-slider img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      opacity: 0;
+      animation: slideShow 18s infinite;
+    }
+
+    .background-slider img:nth-child(1) { animation-delay: 0s; }
+    .background-slider img:nth-child(2) { animation-delay: 6s; }
+    .background-slider img:nth-child(3) { animation-delay: 12s; }
+
+    @keyframes slideShow {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    #homeSection {
+      position: relative;
+      min-height: 100vh;
+      color: white;
+      padding: 50px 20px;
+      box-sizing: border-box;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+    }
+  </style>
 </head>
-<body class="theme-home">
+<body class="home-page">
+
   <header>
     <div class="logo">
       <img src="logo.png" alt="Logo de la bijouterie" />
@@ -17,19 +74,26 @@
         <li><a href="#" data-section="femme">Bijoux Femme</a></li>
         <li><a href="#" data-section="homme">Bijoux Homme</a></li>
         <li><a href="#" data-section="atelier">Atelier Créatif</a></li>
+        <li><a href="#" data-section="contact">Nous Contacter</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Section Accueil avec slider -->
     <section id="homeSection" class="section active">
+      <div class="background-slider">
+        <img src="photo1_femme_collier.png" alt="Bijou femme 1">
+        <img src="photo2_femme_boucles.png" alt="Bijou femme 2">
+        <img src="photo3_homme_bijoux.png" alt="Bijou homme">
+      </div>
       <h1>Bienvenue dans notre bijouterie</h1>
       <p class="intro">
         Découvrez des bijoux d'exception pour femmes et hommes, des sacs élégants, des pierres naturelles sélectionnées,
         des bijoux en acier inoxydable et en argent. Plongez dans notre univers luxueux et créatif.
       </p>
       <p class="intro">
-        Notre atelier créatif vous permet de concevoir le bijou de vos rêves. Laissez libre cours à votre imagination !
+        Notre atelier créatif vous permet de concevoir le bijou de vos rêves. Laissez libre cours à votre imagination !
       </p>
     </section>
 
@@ -60,26 +124,30 @@
     <section id="atelierSection" class="section">
       <h2 class="section-title">Atelier Créatif</h2>
       <p class="description">
-        Créez votre bijou unique grâce à notre atelier interactif. Sélectionnez un pendentif, une chaîne, une couleur, et visualisez votre création en temps réel.
+        Créez votre bijou unique grâce à notre atelier interactif.
       </p>
       <button id="openCreatorBtn" class="creative-btn">Créer mon bijou</button>
+    </section>
 
-      <div id="creativeModal" class="modal">
-        <div class="modal-content">
-          <span id="closeModal" class="close-btn">&times;</span>
-          <h3>Personnalisez votre bijou</h3>
-          <p>Glissez-déposez un pendentif dans la zone de prévisualisation :</p>
-          <div class="creator-tools">
-            <div class="pieces">
-              <div class="piece" draggable="true" data-piece="💎">💎</div>
-              <div class="piece" draggable="true" data-piece="❤️">❤️</div>
-              <div class="piece" draggable="true" data-piece="⭐">⭐</div>
-            </div>
-            <div id="dropZone" class="preview-area">
-              <p class="placeholder">Déposez le pendentif ici</p>
-            </div>
-          </div>
-        </div>
+    <section id="contactSection" class="section">
+      <h2 class="section-title">Nous contacter</h2>
+      <p class="description">Vous pouvez nous joindre via les moyens suivants :</p>
+
+      <form class="contact-form">
+        <label>Téléphone :</label>
+        <input type="tel" value="06 12 34 56 78" disabled>
+        <label>Email :</label>
+        <input type="email" value="bijouterie@example.com" disabled>
+        <label>Instagram :</label>
+        <input type="text" value="@bijouterie_luxe" disabled>
+        <label>Adresse :</label>
+        <input type="text" value="9 Bis Rue François Mauriac, 56600 Lanester" disabled>
+      </form>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=9+Bis+Rue+Fran%C3%A7ois+Mauriac,+56600+Lanester&output=embed"
+          width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
       </div>
     </section>
   </main>
