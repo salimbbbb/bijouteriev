@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bijouterie - Site Vitrine</title>
   <link rel="stylesheet" href="c.css">
   <style>
-    /* Fix slider */
+    /* === SLIDER ACCUEIL === */
     .background-slider {
       position: absolute;
       top: 0;
@@ -41,9 +41,70 @@
     #homeSection {
       position: relative;
       min-height: 100vh;
-      color: white;
+      color: black;
       padding: 50px 20px;
       box-sizing: border-box;
+    }
+
+    #homeSection h1, #homeSection p {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      border-radius: 8px;
+      backdrop-filter: blur(4px);
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      position: relative;
+      width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-item:hover img {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .info-box {
+      position: absolute;
+      top: 10px;
+      right: -5px;
+      width: 140px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      font-size: 14px;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .gallery-item:hover .info-box {
+      opacity: 1;
     }
 
     footer {
@@ -53,12 +114,6 @@
       padding: 20px;
       position: relative;
       z-index: 1;
-    }
-
-    .section {
-      position: relative;
-      z-index: 1;
-      padding: 60px 20px;
     }
   </style>
 </head>
@@ -97,27 +152,43 @@
       </p>
     </section>
 
+    <!-- Section Femme -->
     <section id="femmeSection" class="section">
       <h2 class="section-title">Collection Femme</h2>
-      <p class="description">
-        Des bijoux <span id="womanPhrase">élégants</span> pour sublimer chaque femme.
-      </p>
+      <p class="description">Des bijoux <span id="womanPhrase">élégants</span> pour sublimer chaque femme.</p>
       <div class="gallery">
-        <img src="femme1.jpg" alt="Bijou femme 1" class="gallery-img">
-        <img src="femme2.jpg" alt="Bijou femme 2" class="gallery-img">
-        <img src="femme3.jpg" alt="Bijou femme 3" class="gallery-img">
+        <div class="gallery-item">
+          <img src="femme1.jpg" alt="Bijou femme 1">
+          <div class="info-box">Collier en argent avec pierre naturelle</div>
+        </div>
+        <div class="gallery-item">
+          <img src="femme2.jpg" alt="Bijou femme 2">
+          <div class="info-box">Boucles d’oreilles dorées, design floral</div>
+        </div>
+        <div class="gallery-item">
+          <img src="femme3.jpg" alt="Bijou femme 3">
+          <div class="info-box">Bracelet en acier inoxydable</div>
+        </div>
       </div>
     </section>
 
+    <!-- Section Homme -->
     <section id="hommeSection" class="section">
       <h2 class="section-title">Collection Homme</h2>
-      <p class="description">
-        Des accessoires <span id="manPhrase">modernes</span> pour révéler la personnalité de chaque homme.
-      </p>
+      <p class="description">Des accessoires <span id="manPhrase">modernes</span> pour révéler la personnalité de chaque homme.</p>
       <div class="gallery">
-        <img src="homme1.jpg" alt="Bijou homme 1" class="gallery-img">
-        <img src="homme2.jpg" alt="Bijou homme 2" class="gallery-img">
-        <img src="homme3.jpg" alt="Bijou homme 3" class="gallery-img">
+        <div class="gallery-item">
+          <img src="homme1.jpg" alt="Bijou homme 1">
+          <div class="info-box">Bracelet tressé en cuir véritable</div>
+        </div>
+        <div class="gallery-item">
+          <img src="homme2.jpg" alt="Bijou homme 2">
+          <div class="info-box">Collier avec pendentif croix en acier</div>
+        </div>
+        <div class="gallery-item">
+          <img src="homme3.jpg" alt="Bijou homme 3">
+          <div class="info-box">Montre élégante en métal brossé</div>
+        </div>
       </div>
     </section>
 
@@ -132,7 +203,6 @@
     <section id="contactSection" class="section">
       <h2 class="section-title">Nous contacter</h2>
       <p class="description">Vous pouvez nous joindre via les moyens suivants :</p>
-
       <form class="contact-form">
         <label>Téléphone :</label>
         <input type="tel" value="06 12 34 56 78" disabled>
